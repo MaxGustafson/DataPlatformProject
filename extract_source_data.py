@@ -1,6 +1,4 @@
 import requests, json, pandas as pd, os
-import pyarrow as pa
-import pyarrow.parquet as pq
 
 def main(full_load = True):
     file_path_json = target_config['file_path_json']
@@ -15,14 +13,6 @@ def write_to_json(posts, json_file_path):
     json_object = json.dumps(posts, indent=4)
     with open(json_file_path, "w") as outfile:
         outfile.write(json_object)
-
-def write_to_parquet(posts, parquet_file_path):
-    df = pd.json_normalize(posts['results'])
-    df =  df.astype({'location.postcode':str})
-    print(df.loc[0])
-    table = pa.Table.from_pandas(df)
-    print(table)
-    pq.write_table(table, parquet_file_path)
    
 def get_posts():
     try:
