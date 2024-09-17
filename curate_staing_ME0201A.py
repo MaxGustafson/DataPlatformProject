@@ -49,6 +49,7 @@ def load_json_to_df(src_data_json):
     
     df_norm = pd.DataFrame(data_norm)
     df_norm.insert(3,'Month_Str', df_norm['Month_Numeric'].apply(lambda row : months_look_up[row]))
+    df_norm.insert(0,'Political_Entity_Voting_Key',df_norm.apply(lambda row: row['Political_Entity'] + '#' + row['Time_Orig'], axis = 1),allow_duplicates=False)
     return df_norm
 
 '''
