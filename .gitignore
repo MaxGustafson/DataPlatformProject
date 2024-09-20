@@ -162,4 +162,5 @@ cython_debug/
 #.idea/
 
 # Manually added
-./data/* 
+./data/staging/*
+./data/raw/* 
