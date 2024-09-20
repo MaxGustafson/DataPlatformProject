@@ -50,7 +50,7 @@ source_config = {
 }
 
 target_config = {
-  'file_path_json':'./data/ME0201A.json'
+  'file_path_json':'./data/staging/ME0201A.json'
 }
 
 if __name__ == "__main__":

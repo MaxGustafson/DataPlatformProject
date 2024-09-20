@@ -62,11 +62,11 @@ def load_df_to_parquet(df, file_path_trg):
     
 
 source_config = {
-   'file_path_json':'./data/ME0201A.json'
+   'file_path_json':'./data/staging/ME0201A.json'
 }
 
 target_config = {
-  'file_path_trg':'./data/ME0201A.parquet'
+  'file_path_trg':'./data/raw/ME0201A.parquet'
 }
 
 months_look_up = {
